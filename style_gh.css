@@ -1,0 +1,629 @@
+/*
+* @Author: Administrator
+* @Date:   2017-07-09 07:51:59
+* @Last Modified by:   HelloWeb_1024
+* @Last Modified time: 2017-08-24 22:49:30
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        text-decoration: none;
+}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+:focus {outline: 0;}
+ins {text-decoration: none;}
+del {	text-decoration: line-through;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+        margin:0;
+        padding:0;
+}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-style:normal;
+font-weight:normal;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym { border:0;}
+
+
+html{
+     background-color: #f5f5f5;
+/*      z-index: 3; */
+}
+.nav{
+	background-color: #ffbe32;
+	height: 60px;
+}
+.wrap{
+	height: 100%;
+	/* 设置它的最大宽度960px; 设了max也可以设置width   只不过当width超过max，就无效了  以max为准
+       配合百分比自适应*/
+	max-width: 960px;
+	/* 这在我的理解是与写margin:0 auto;没什么区别 翻译后就是如此 */
+	margin:0 auto;
+}
+
+.logo{
+ 	margin-right: 25px;
+ 	float: left;
+}
+.logo a{
+    line-height: 60px;
+    float: left;
+}
+.logo img{
+	float: left;
+}
+.nav-list,.aside{
+    margin: 0;
+    padding: 0;
+}
+/* 这里是导航栏内容 */
+.nav-list li a {
+    color: #000;
+    display: block;
+    font-size: 15px;
+    height: 60px;
+    line-height: 60px;
+    min-width: 98px;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+}
+ .nav-list .active a, .nav-list li a:hover{
+	background: #ffce7a none repeat scroll 0 0;
+} 
+/* 这里是搜索框内容 */
+.aside li{
+	float: left;
+	font-size: .16rem;
+}
+.search{
+	float: right;
+    line-height: 60px;
+}
+.search-box{
+    font-size: 0.13rem;
+    position: relative;
+}
+.aside .search input {
+    background-color: #fff;
+    /* medium是边框宽度的默认值 none表示不显示边框*/
+    border: medium none;
+    border-radius: 15px;
+    height: 28px;
+    outline: 0 none;
+    left: 15px;
+    text-indent: 2em;
+    /* 垂直对齐方式 */
+    vertical-align: -0.5px;
+    z-index: 2;
+}
+.aside_li{
+    position: relative;
+}
+.aside_icon{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    /* 设立等级就出现了放大镜它覆盖在为设置定位的上就会显示 我的理解 */
+    z-index: 100;
+}
+.aside .search .search-box input {
+    background-color: #fff;
+    border: medium none;
+    border-radius: 14px;
+    height: 28px;
+    outline: 0 none;
+    text-indent: 2em;
+    vertical-align: -2px;
+}
+.search input{
+    transition: width 1.5s;
+}
+.search-input{
+    width: 0px; 
+}
+.search-i:hover + .search-input{
+    width: 150px;
+}
+.search-input:hover{
+    width: 150px;
+}
+/* 这里是登陆注册 */
+.person{
+    padding-left: 75px;
+	list-style: none;
+	width: 50px #ffce7a;
+	float: left;
+	text-align: center;
+	line-height: 60px;
+}
+.person a{
+    font-size: 15px;
+    color: black;
+}
+.person>a:hover{
+	color: red;
+}
+
+.gap{
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    vertical-align: -1px;
+    background-color: #000;
+    margin: 0 5px;
+}
+
+
+
+.gallery{
+/*     display: block; */
+    height: 330px;
+    margin:25px auto;
+    max-width: 965px;
+/*     background-color: red; */
+}
+.gallery img{
+    border-radius: 25px;
+}
+.gallery-action img:hover{
+    opacity:0.85;
+    transform: scale(0.95,0.95);
+}
+.gallery-main img{
+    display: block;
+    float: left;
+}
+.gallery-other-top img{
+/*     float: left; */
+    padding-left: 10px;
+}
+.gallery-other--bottomleft img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.gallery-other--bottomright img{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+
+.tabs>ul{
+    display: block;
+    width: 720px;
+    height: 40px;
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+/* .nav-tablist li{
+    margin-left: 100px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid red;
+} */
+
+.tabs>ul>li>a{
+    position: relative;
+    display: block;
+    border-radius: 15px;
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    padding-top: 10px;
+    color: black;
+    text-decoration: none;
+    float: left;
+}
+/* .tabs ul li a:after{
+    position: absolute;
+    display: block;
+    height: 0px;
+    width: 0px;
+    border: 15px solid;
+    border-color: #fff transparent transparent transparent;
+    content: '';
+    margin:  0 auto;
+    bottom: -30px;
+    left: 40px;
+    z-index: 1;
+} */
+.tabs ul li a:hover{
+    background-color: #ffce7a;
+}
+.nav-tabs>li>a:hover{
+    background-color: #ffce7a;
+} 
+
+
+
+
+
+
+
+.tab-pane{
+    height: 160px;
+    width: 720px;
+    border-radius: 15px;
+    background: #fff;
+}
+.tab-pane>ul>li>a>img{
+    position: relative;
+    float: left;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+.sizi-big{
+    font-size: 20px;
+    padding-left: 20px;
+    color: #000;
+}
+.sizi-big:hover{
+    text-decoration: none;
+    color: #ffce7a;
+}
+#kuaibao-list>li>a>span{
+    position: absolute;
+    padding-top: 5px;
+    padding-left: 185px;
+    text-decoration: none;
+}
+.author{
+    position: absolute;
+    padding-top: 39px;
+    padding-left: 185px;
+}
+.summary{
+    position: absolute;
+    padding-top: 65px;
+    padding-left: 185px;
+}
+/* .tag{
+    display: block;
+    float: left;
+} */
+.biaoqian{
+    float: left;
+    position: absolute;
+    padding-top: 130px;
+    padding-left: 18px;
+}
+.other li{
+    position: relative;
+    float: left;
+    text-decoration: underline;
+    padding-left: 75px;
+    padding-top: 130px;
+}
+
+
+
+
+
+
+
+
+.main-footer{
+    height: 330px;
+    background: #3c3c3c;
+    margin-top: 40px;
+}
+.copyright{
+    background: #333;
+    color: #969696;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.copyright a{
+    color: #969696;
+}
+.copyright a:hover{
+    color: #969696;
+    text-decoration: none;
+}
+.rqcode{
+    position: absolute;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: -200px;
+    margin-left: 900px;
+    height: 140px;
+    width: 140px;
+    padding: 10px;
+}
+.rqcode p{
+    color: #969696;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.contact h3{
+    position:absolute; 
+    color: #fff;
+    font-size: 20px;
+    padding-left: 200px;
+    margin-top: -80px;
+}
+.contact-main{
+    position:absolute;
+    color: #fff;
+    padding-left: 200px;
+    margin-top: -50px;    
+}
+.feed>h3{
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 550px;
+    padding-top: 240px;
+}
+.footer-email{
+    position: absolute;
+    padding-left: 550px;
+    padding-top: 280px;
+}
+.footer-email i{
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 6px;
+/*     z-index: 50px; */
+}
+.footer-email input{
+    border: medium none;
+    height: 25px;
+    border-radius: 5px;
+    text-indent: 2em;
+}
+#mobile-feed-btn{
+    height: 15px;
+    width: 15px;
+    background: #ffce7a;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.footer-email a{
+    color: #fff;
+}
+.footer-email a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.cooperation{
+    position: absolute;
+    color: #fff;
+    top: 1820px;
+    padding-left: 200px;
+}
+.cooperation ul{
+    display: block;
+    font-size: 14px;
+}
+
+.clear-one{
+    float: left;
+}
+.clear-one a{
+    color: #a7a7a7;
+}
+.clear-one a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+
+
+
+.clear-two{
+    float: left;
+    padding-left: 30px;
+}
+.clear-two a{
+    color: #a7a7a7;
+}
+.clear-two a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+
+
+.clear-three{
+    float: left;
+    padding-left: 30px;
+}
+.clear-three a{
+    color: #a7a7a7;
+}
+.clear-three a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+
+
+
+.clear-four{
+    float: left;
+    padding-left: 30px;
+}
+.clear-four a{
+    color: #a7a7a7;
+}
+.clear-four a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+
+
+
+.clear-five{
+    float: left;
+    padding-left: 30px;
+}
+.clear-five a{
+    color: #a7a7a7;
+}
+.clear-five a:hover{
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+/* 鼠标点击到顶部的样式 */
+
+/* #btn{
+    position: fixed;
+    left: 50%;
+    margin-left: 565px;
+    bottom:50px;
+    padding:20px;
+    background-color: #ffce7a;
+    background-image: url('images/up-arrow.png'); 
+    background-repeat:no-repeat;
+} */
+#btn{
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 50%;
+    margin-left: 550px;
+    bottom:50px;
+    padding:20px;
+    background-color: #ffce7a;
+    background-image: url('images/up-arrow.png'); 
+    background-repeat:no-repeat;
+    border-radius: 15px;
+}
+.fromBox a{
+    text-decoration: none;
+    color: #fff;
+}
+.fromBox a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.fromBox a:link,.fromBox a:visited{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*侧边栏*/
+.aside-two{
+    width:240px;
+    height: 700px;
+    background-color: #fff;
+    overflow: hidden;
+    position: absolute;
+    left:925px;
+    top: 440px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.title-two{
+    height: 40px;
+    position: relative;
+    background-color: #ffce7a;
+}
+
+.title-two ul{
+    position: absolute;
+}
+.title-two li{
+    float: left;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #F7F7F7;
+}
+.title-two li a:link,.title-two li a:visited{
+    text-decoration: none;
+    color: #000;
+}
+.title-two li a:hover{
+    color: #000;
+}
+.title-two li.select{
+    background-color: #ffce7a;
+    border-bottom-color: #fff;
+    border-right:1px solid #eee;
+    border-left: 1px solid #eee;
+    padding:0;
+}
+.notice ul li{
+    padding: 10px;
+}
+.notice ul li a{
+    color: black;
+    text-decoration: none;
+}
+.notice ul li a:hover{
+    color: red;
+}
+
+.notice ul span{
+    padding: 4px;
+    background-color: #E0E0E0;  
+    border-radius: 50%;
+    font-size: 16px;
+    margin: 3px;
+    top: 10px;  
+    color: #fff; 
+}
+.notice .num_one{
+    background-color: #28FF28;
+}
+.notice .num_two{
+    background-color: #F9F900;
+}
+.notice .num_three{
+    background-color:   #FF8040;
+}
+.notice-con{
+    overflow: hidden;
+}
+.notice-con ul li{
+    font-size: 13px;
+    float: left;
+    margin: 5px;
+    width: 65px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    color: #33CC33;
+    background-color: #ffce7a;
+}
+
+
